@@ -19,11 +19,7 @@ app.get('/', (req, res) => {
 
 //connect to the database
 const url = process.env.ATLAS_URI;
-mongoose.connect(url,{
-    useNewUrlParser: true, 
-    useCreateIndex: true,//to avoid deprecation warnings
-    useUnifiedTopology: true
-}).then(() => {
+mongoose.connect(url).then(() => {
     console.log('Connected to the database');
 }).catch((err) => {
     console.log('Error connecting to the database', err);
